@@ -17,6 +17,7 @@
     { "binding": "FLAGS", "id": "local-flags" }
   ],
   "r2_buckets": [
-    { "binding": "MEDIA", "bucket_name": "media" }
+    { "binding": "MEDIA", "bucket_name": "media" },
+    { "binding": "MEDIA_GUARD_TEST", "bucket_name": "guard-test" }
   ]
 }
