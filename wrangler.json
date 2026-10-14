@@ -15,6 +15,11 @@
       "binding": "D1_GUARD_READBACK_TEST",
       "database_name": "guard-readback-test",
       "database_id": "0"
+    },
+    {
+      "binding": "D1_GUARD_MISMATCH_TEST",
+      "database_name": "guard-mismatch-test",
+      "database_id": "0"
     }
   ],
   "kv_namespaces": [
