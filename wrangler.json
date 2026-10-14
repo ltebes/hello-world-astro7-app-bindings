@@ -10,6 +10,11 @@
       "database_name": "db",
       "database_id": "0",
       "migrations_dir": "drizzle"
+    },
+    {
+      "binding": "D1_GUARD_READBACK_TEST",
+      "database_name": "guard-readback-test",
+      "database_id": "0"
     }
   ],
   "kv_namespaces": [
