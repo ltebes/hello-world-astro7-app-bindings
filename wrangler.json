@@ -32,6 +32,11 @@
       "binding": "D1_FB_UNKNOWN",
       "database_name": "guard-fb-unknown-v2",
       "database_id": "0"
+    },
+    {
+      "binding": "D1_FB_MISMATCH",
+      "database_name": "guard-fb-mismatch-v2",
+      "database_id": "0"
     }
   ],
   "kv_namespaces": [
