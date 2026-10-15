@@ -3,7 +3,9 @@
   "name": "hello-world-astro7-app-bindings",
   "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2025-04-15",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "d1_databases": [
     {
       "binding": "DB",
@@ -20,13 +22,27 @@
       "binding": "D1_GUARD_MISMATCH_TEST",
       "database_name": "guard-mismatch-test",
       "database_id": "0"
+    },
+    {
+      "binding": "D1_FB_OK",
+      "database_name": "guard-fb-ok-v2",
+      "database_id": "0"
     }
   ],
   "kv_namespaces": [
-    { "binding": "SESSIONS", "id": "local" },
-    { "binding": "FLAGS", "id": "local-flags" }
+    {
+      "binding": "SESSIONS",
+      "id": "local"
+    },
+    {
+      "binding": "FLAGS",
+      "id": "local-flags"
+    }
   ],
   "r2_buckets": [
-    { "binding": "MEDIA", "bucket_name": "media" }
+    {
+      "binding": "MEDIA",
+      "bucket_name": "media"
+    }
   ]
 }
