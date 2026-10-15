@@ -27,6 +27,11 @@
       "binding": "D1_FB_OK",
       "database_name": "guard-fb-ok-v2",
       "database_id": "0"
+    },
+    {
+      "binding": "D1_FB_UNKNOWN",
+      "database_name": "guard-fb-unknown-v2",
+      "database_id": "0"
     }
   ],
   "kv_namespaces": [
