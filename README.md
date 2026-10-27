@@ -1,5 +1,21 @@
 # hello-world-astro7-app-bindings
 
+## CLOUD-1198: intentional build failure
+
+This branch is a disposable SAI EU test fixture, based on `main` at
+`0cbff8356286bfaf62e0cdc8749671712dac3486`. Deploy it to the test app after a
+successful baseline deployment. The Astro build hook intentionally throws
+`CLOUD-1198: intentional build failure for SAI EU validation`.
+
+Expected: the new deployment reaches a failed state without manually refreshing
+the dashboard, and the previous successful deployment keeps serving. Run
+`npm run build` locally to reproduce the expected nonzero exit. The hook also
+runs when Webflow Cloud invokes `astro build` directly.
+
+Do not merge this fixture into `main`. It exercises build failure notification;
+it does not simulate callback delivery failure or an ECS task stopped before
+its completion callback.
+
 An **Astro 7** starter for [**Webflow Cloud**](https://webflow.com/cloud) with Cloudflare bindings (D1, R2, KV) wired in.
 
 At deploy time, Webflow Cloud provisions the configured services and injects them into your app as typed bindings — no API keys, no connection strings.
