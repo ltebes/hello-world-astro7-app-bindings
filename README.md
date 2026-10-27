@@ -1,5 +1,20 @@
 # hello-world-astro7-app-bindings
 
+## CLOUD-1198: slow build
+
+This branch is a disposable SAI EU test fixture, based on `main` at
+`0cbff8356286bfaf62e0cdc8749671712dac3486`. The Astro build hook waits 120 seconds
+and then runs the normal build. It also runs when Webflow Cloud invokes
+`astro build` directly. Run `npm run build` locally to reproduce it.
+
+During the wait, navigate away and back, reload the dashboard, or switch tabs.
+Expected: the active deployment keeps updating and reaches its terminal state
+without a manual refresh. Use a separate deployment of this branch for the
+cancel scenario; confirm it remains canceled after the worker settles.
+
+Do not merge this fixture into `main`. The delay is bounded and does not simulate
+an ECS timeout, callback delivery failure, or a duplicate callback.
+
 An **Astro 7** starter for [**Webflow Cloud**](https://webflow.com/cloud) with Cloudflare bindings (D1, R2, KV) wired in.
 
 At deploy time, Webflow Cloud provisions the configured services and injects them into your app as typed bindings — no API keys, no connection strings.
