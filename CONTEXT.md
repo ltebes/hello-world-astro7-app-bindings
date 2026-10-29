@@ -57,6 +57,11 @@ Requires Node 22.12+ (set in `.nvmrc`).
 
 ## Building
 
+This temporary CLOUD-1197 QA branch registers `scripts/cloud-1197-logs.mjs`
+as an Astro integration. It emits logs over 30 seconds, then continues the
+normal build. ECS routing is a separate server-side prerequisite described in
+the branch-specific README. Do not merge into main.
+
 ```bash
 npm run build            # wrangler types && astro build
 ```
