@@ -1,5 +1,21 @@
 # hello-world-astro7-app-bindings
 
+## CLOUD-1197: controlled build failure
+
+Temporary QA branch `test/cloud-1197-failed-build`, based on main commit
+`343bd3b1e114753ab941d8dd7fe966d672e77a92`. Do not merge this branch into main.
+
+Deploy this branch through the SAI EU dashboard with the Cloudflare Containers
+builder enabled for the initiating identity. Open the deployment while building.
+The Astro build hook prints `[CLOUD-1197] START`, then six `LIVE` lines five
+seconds apart, and fails deliberately with `[CLOUD-1197] EXPECTED_BUILD_FAILURE`.
+Confirm the lines arrive without refreshing, then reload after failure and
+confirm the same markers and error remain available in saved logs.
+
+The hook runs during `astro build`, even if the platform skips `npm run build`.
+The branch does not change builder routing, app bindings, or dependencies.
+Select main again after testing to restore the normal build.
+
 An **Astro 7** starter for [**Webflow Cloud**](https://webflow.com/cloud) with Cloudflare bindings (D1, R2, KV) wired in.
 
 At deploy time, Webflow Cloud provisions the configured services and injects them into your app as typed bindings — no API keys, no connection strings.

@@ -57,6 +57,10 @@ Requires Node 22.12+ (set in `.nvmrc`).
 
 ## Building
 
+This temporary CLOUD-1197 QA branch registers `scripts/cloud-1197-logs.mjs`
+as an Astro integration. It emits logs over 30 seconds, then intentionally
+fails the build. See the branch-specific README; do not merge into main.
+
 ```bash
 npm run build            # wrangler types && astro build
 ```
