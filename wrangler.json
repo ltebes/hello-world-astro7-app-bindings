@@ -7,7 +7,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "cloud1099-eu",
+      "database_name": "cloud1099-us",
       "database_id": "0",
       "migrations_dir": "drizzle"
     }
