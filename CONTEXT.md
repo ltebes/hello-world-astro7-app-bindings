@@ -4,6 +4,15 @@ Orientation for contributors to this **Astro 7 + bindings** Hello World example
 for [Webflow Cloud](https://developers.webflow.com/webflow-cloud). Keep this
 file current when structure or workflows change.
 
+## Temporary CLOUD-401 fixture
+
+On `test/cloud-401-ddtrace-build-failure`, `astro.config.mjs` throws
+`[CLOUD-401] EXPECTED_BUILD_FAILURE` from `astro:build:start` to exercise
+Acceptance's builder failure reporting and dd-trace export. A nonzero build
+exit with that exact marker is expected. Revert the fixture commit on the
+same branch to test recovery in the same app environment; see the README.
+Do not merge this temporary fixture into `main`.
+
 ## What this is
 
 A minimal, branded **Hello, world** page built with **Astro 7 (SSR via
