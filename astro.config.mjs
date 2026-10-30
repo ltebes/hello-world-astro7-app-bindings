@@ -7,18 +7,6 @@ export default defineConfig({
   base: process.env.COSMIC_MOUNT_PATH || process.env.PUBLIC_BASE_PATH || '',
   compressHTML: true,
   output: 'server',
-  integrations: [
-    {
-      name: 'cloud-401-ddtrace-build-failure',
-      hooks: {
-        'astro:build:start': () => {
-          throw new Error(
-            '[CLOUD-401] EXPECTED_BUILD_FAILURE: intentional Acceptance build failure for dd-trace verification'
-          );
-        },
-      },
-    },
-  ],
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
