@@ -1,34 +1,5 @@
 # hello-world-astro7-app-bindings
 
-## Temporary CLOUD-401 Acceptance test
-
-This branch deliberately fails `astro build` with
-`[CLOUD-401] EXPECTED_BUILD_FAILURE`. The failure comes from an
-`astro:build:start` hook, so it also runs when Webflow Cloud invokes Astro
-directly instead of the npm build script. Do not merge this fixture into `main`.
-
-1. In **Acceptance** (`https://webflowtest.com`, not acceptance2), use a test
-   environment connected to `test/cloud-401-ddtrace-build-failure` and deploy it.
-2. Confirm the build log contains the marker above and the deployment reaches
-   a terminal failed status. Record its deployment ID and time for Datadog.
-   An install error, cancellation, or unrelated failure does not count.
-3. After observing the failure, revert the commit titled
-   `test: add controlled CLOUD-401 build failure` and push the revert to this
-   same branch. Deploy the new commit in the **same app and environment**.
-   Retrying the failed deployment's original commit will fail again.
-4. Confirm the recovery build and deployment succeed. Open the mounted app
-   and check its binding status cards. Record this deployment ID too.
-
-The baseline is `main` at `343bd3b1e114753ab941d8dd7fe966d672e77a92`.
-Reverting the fixture commit restores that source tree without changing
-dependencies or binding declarations. An environment whose first deployment
-is this intentional failure has no earlier successful version to serve.
-
-For CLOUD-401, correlate the failed builder trace/logs and the successful
-recovery builder/deployer traces in Datadog, verifying SDK version `5.131.1`.
-This tests a normal application build failure, not a deployer failure or an
-abruptly killed container.
-
 An **Astro 7** starter for [**Webflow Cloud**](https://webflow.com/cloud) with Cloudflare bindings (D1, R2, KV) wired in.
 
 At deploy time, Webflow Cloud provisions the configured services and injects them into your app as typed bindings — no API keys, no connection strings.
