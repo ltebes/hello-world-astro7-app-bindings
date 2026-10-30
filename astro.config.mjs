@@ -7,14 +7,6 @@ export default defineConfig({
   base: process.env.COSMIC_MOUNT_PATH || process.env.PUBLIC_BASE_PATH || '',
   compressHTML: true,
   output: 'server',
-  integrations: [{
-    name: 'cloud-401-tsx-controlled-failure',
-    hooks: {
-      'astro:build:start': () => {
-        throw new Error('[CLOUD-401-TSX] EXPECTED_BUILD_FAILURE: controlled Acceptance regression test');
-      },
-    },
-  }],
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
